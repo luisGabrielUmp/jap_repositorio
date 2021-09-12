@@ -23,7 +23,7 @@ function showImagesGallery(array){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(CATEGORY_INFO_URL).then(function(resultObj){
+    getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             category = resultObj.data;

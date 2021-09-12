@@ -10,29 +10,85 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="redirec.js"></script>
 </head>
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block" id="desplegar" href="my-profile.html"></a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+      </div>
+      <h1 class="alert-info text-center p-4" id="productName"></h1>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción:</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Precio: </dt>
+        <dd>
+          <p id="productCost"></p>
+        </dd>
+
+        <dt>Vendidos: </dt>
+        <dd>
+          <p id="productCriteria"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+
+        <dt>Productos Relacionados:</dt>
+      </dl>
+
+        <div class="row text-center text-lg-left pt-2" id="relatedProduct">
+        </div>
+      <hr><h3>Comentarios del producto:</h3>
+      <div class="row">
+        <div id="comentaryList"><hr><br>
+        </div>
+       </div>
+          <hr><form>
+            <h3>Puntuar y comentar producto:</h3><br>
+            <Select id="idClasificacion" required>
+              <option value="">Eligir Puntuacion</option>
+              <option value="1 Punto">1 Punto</option>
+              <option value="2 Punto">2 Puntos</option>
+              <option value="3 Punto">3 Puntos</option>
+              <option value="4 Punto">4 Puntos</option>
+              <option value="5 Punto">5 Puntos</option>
+              </select><br><br>
+              <textarea placeholder="Escriba su comentario aqui..." maxlength="120" class="form-control col-6" id="exampleFormControlTextarea1" rows="3"></textarea><br>
+            <input type="submit" class="btn btn-outline-primary" value="Enviar"><br><br>
+          </form>
+          <div class="row justify-content-center">
+          <div class="col-4">
+        <a type="button" class="btn btn-outline-secondary btn-lg btn-block" href="products.html">Volver a productos</a>
+      </div>
+    </div> 
+      </div>
   </div>
+  </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -54,6 +110,8 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/login.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
 </html>
