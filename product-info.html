@@ -13,6 +13,7 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="redirec.js"></script>
 </head>
@@ -24,8 +25,15 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="desplegar" href="my-profile.html"></a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="desplegar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+          <a class="dropdown-item" href="index.html" onclick="cerrarSesion()">Cerrar Sesion</a>
+        </div>
+      </div>
     </div>
   </nav>
   <main role="main">
@@ -58,10 +66,10 @@
           </div>
         </dd>
 
-        <dt>Productos Relacionados:</dt>
+        <dt class="display-4 text-dark"><strong>Productos Relacionados:</strong></dt>
       </dl>
 
-        <div class="row text-center text-lg-left pt-2" id="relatedProduct">
+        <div class="row text-center pt-2" id="relatedProduct">
         </div>
       <hr><h3>Comentarios del producto:</h3>
       <div class="row">
@@ -72,20 +80,20 @@
             <h3>Puntuar y comentar producto:</h3><br>
             <Select id="idClasificacion" required>
               <option value="">Eligir Puntuacion</option>
-              <option value="1 Punto">1 Punto</option>
-              <option value="2 Punto">2 Puntos</option>
-              <option value="3 Punto">3 Puntos</option>
-              <option value="4 Punto">4 Puntos</option>
-              <option value="5 Punto">5 Puntos</option>
+              <option value="1">1 Punto</option>
+              <option value="2">2 Puntos</option>
+              <option value="3">3 Puntos</option>
+              <option value="4">4 Puntos</option>
+              <option value="5">5 Puntos</option>
               </select><br><br>
               <textarea placeholder="Escriba su comentario aqui..." maxlength="120" class="form-control col-6" id="exampleFormControlTextarea1" rows="3"></textarea><br>
-            <input type="submit" class="btn btn-outline-primary" value="Enviar"><br><br>
+            <input type="submit" class="btn btn-outline-primary" value="Enviar" onclick="nuevoComentario()"><br><br>
           </form>
           <div class="row justify-content-center">
           <div class="col-4">
         <a type="button" class="btn btn-outline-secondary btn-lg btn-block" href="products.html">Volver a productos</a>
       </div>
-    </div> 
+    </div>
       </div>
   </div>
   </main>

@@ -9,3 +9,13 @@ function mostrarUsuario(){
     var usuario = document.getElementById("correo").value;
     sessionStorage.setItem("user", usuario);
 }
+
+function cerrarSesion() {
+    sessionStorage.removeItem("user");
+
+    cerrarSesion();
+}
+
+
+
+

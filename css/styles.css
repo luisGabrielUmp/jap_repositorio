@@ -140,9 +140,6 @@ a.custom-card:hover {
   color: orange;
 }
 
-.form {
-  font-family: Verdana;
-}
 
 h2 {
   color : #2d9eb4;
@@ -151,8 +148,4 @@ h2 {
 
 .cartel {
   color:white;
-}
-
-.boxsearch {
-  
 }
