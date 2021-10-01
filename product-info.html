@@ -15,6 +15,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <script src="redirec.js"></script>
 </head>
 
@@ -59,19 +60,29 @@
         <dd>
           <p id="productCriteria"></p>
         </dd>
-
         <dt>Imágenes ilustrativas</dt>
-        <dd>
-          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
-          </div>
-        </dd>
-
-        <dt class="display-4 text-dark"><strong>Productos Relacionados:</strong></dt>
       </dl>
+        <div class="col-5">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="productImagesGallery">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <hr><div class="display-6 text-danger"><strong>Productos Relacionados:</strong></div>
+      
 
         <div class="row text-center pt-2" id="relatedProduct">
         </div>
-      <hr><h3>Comentarios del producto:</h3>
+      <hr><div class="display-6 text-danger"><strong>Comentarios del producto:</strong></div>
       <div class="row">
         <div id="comentaryList"><hr><br>
         </div>
@@ -87,7 +98,7 @@
               <option value="5">5 Puntos</option>
               </select><br><br>
               <textarea placeholder="Escriba su comentario aqui..." maxlength="120" class="form-control col-6" id="exampleFormControlTextarea1" rows="3"></textarea><br>
-            <input type="submit" class="btn btn-outline-primary" value="Enviar" onclick="nuevoComentario()"><br><br>
+            <button type="button" class="btn btn-primary" value="Enviar" onclick="nuevoComentario()">Enviar</button><br><br>
           </form>
           <div class="row justify-content-center">
           <div class="col-4">
@@ -120,6 +131,7 @@
   <script src="js/product-info.js"></script>
   <script src="js/login.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -8,40 +8,27 @@ function showImagesGallery(array){
 
     let htmlContentToAppend = "";
 
-        htmlContentToAppend += `
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
-        </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="${array[0]}" class="d-block w-60" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="${array[1]}" class="d-block w-60" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="${array[2]}" class="d-block w-60" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="${array[3]}" class="d-block w-60" alt="...">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-        `
+    for (let i = 0; i < array.length; i++) {
+      let image = array[i];
+      
+  if(i == 0) {
 
-        document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
+        htmlContentToAppend += `
+              <div class="carousel-item active">
+                <img src="${image}" class="d-block w-100" alt="...">
+              </div>
+        `
+        continue;
+  }
+  
+  htmlContentToAppend += `
+              <div class="carousel-item">
+                <img src="${image}" class="d-block w-100" alt="...">
+              </div>
+  `
+
+  document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
+  }
 }
 
 
@@ -146,16 +133,23 @@ function nuevoComentario(){
     let comentary = document.getElementById("exampleFormControlTextarea1").value;
     let nombre = sessionStorage.getItem("user");
     let date = new Date()
-    let finalDate = date.toLocaleDateString("es-ES", date);
-    
+    let finalDate = date.toLocaleDateString("es-ES", {
+      day : "2-digit",
+      month : "2-digit",
+      year : "numeric",
+
+    });
+    let hora = date.getHours();
+    let minutos = date.getMinutes();
+    let segundos = date.getSeconds();
 
     comentaryToAppend += `
     <div class="col">
-    <hr><p4><strong>Comentario de </strong><p4 class="badge rounded-pill bg-primary text-light"> ${nombre} ( ${finalDate} ) :</p4></p4><br>
+    <hr><p4><strong>Comentario de </strong><p4 class="badge rounded-pill bg-primary text-light"> ${nombre} ( ${finalDate} ${hora}:${minutos}:${segundos} ) :</p4></p4><br>
     <p4 class="text-secondary"> ${comentary} </p4><br>
     <p4 class="text-warning">${calificar(estrella)} </p4>
     </div> 
     `
 
-    document.getElementById("comentaryList").innerHTML = comentaryToAppend;
+    document.getElementById("comentaryList").innerHTML = document.getElementById("comentaryList").innerHTML + comentaryToAppend;
 }
